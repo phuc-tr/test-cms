@@ -1,3 +1,4 @@
+import { RichText } from '@payloadcms/richtext-lexical/react'
 import { headers as getHeaders } from 'next/headers.js'
 import Image from 'next/image'
 import { getPayload } from 'payload'
@@ -12,6 +13,11 @@ export default async function HomePage() {
   const payloadConfig = await config
   const payload = await getPayload({ config: payloadConfig })
   const { user } = await payload.auth({ headers })
+
+  const { docs: posts } = await payload.find({
+    collection: 'posts',
+    sort: '-createdAt',
+  })
 
   const fileURL = `vscode://file/${fileURLToPath(import.meta.url)}`
 
@@ -47,6 +53,17 @@ export default async function HomePage() {
             Documentation
           </a>
         </div>
+
+        <section className="posts">
+          <h2>Posts</h2>
+          {posts.length === 0 && <p>No posts yet. Create one in the admin panel.</p>}
+          {posts.map((post) => (
+            <article key={post.id}>
+              <h3>{post.title}</h3>
+              {post.content && <RichText data={post.content} />}
+            </article>
+          ))}
+        </section>
       </div>
       <div className="footer">
         <p>Update this page by editing</p>
