@@ -140,3 +140,13 @@ a {
   margin: 0;
   white-space: pre-wrap;
 }
+
+.home-header {
+  display: flex;
+  justify-content: center;
+}
+
+.home-logo {
+  width: auto;
+  height: 120px;
+}

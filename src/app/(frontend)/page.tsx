@@ -1,4 +1,5 @@
 import { RichText } from '@payloadcms/richtext-lexical/react'
+import Image from 'next/image'
 import Link from 'next/link'
 import { headers as getHeaders } from 'next/headers'
 import { getPayload } from 'payload'
@@ -31,6 +32,9 @@ export default async function HomePage() {
 
   return (
     <div className="home">
+      <header className="home-header">
+        <Image src="/logo.png" alt="Site logo" width={1378} height={1142} priority className="home-logo" />
+      </header>
       <nav className="home-nav">
         {user && user.collection === 'customers' ? (
           <Link href="/account">My Account</Link>
