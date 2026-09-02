@@ -56,3 +56,87 @@ a {
     margin: 0 0 0.5rem;
   }
 }
+
+.like-button {
+  margin-top: 0.5rem;
+  padding: 0.3rem 0.75rem;
+  font-size: 1rem;
+  border-radius: 999px;
+  border: 1px solid rgb(60, 60, 60);
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+.home-nav {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+  margin-bottom: 1.5rem;
+}
+
+.auth {
+  max-width: 24rem;
+  margin: 0 auto;
+  padding: 45px;
+
+  h1 {
+    margin: 0 0 2rem;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  label {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  input {
+    padding: 0.5rem;
+    font-size: 1rem;
+    border-radius: 4px;
+    border: 1px solid rgb(60, 60, 60);
+    background: rgb(20, 20, 20);
+    color: inherit;
+  }
+
+  button {
+    padding: 0.6rem;
+    font-size: 1rem;
+    border-radius: 4px;
+    border: none;
+    background: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+
+    &:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+  }
+}
+
+.auth-error {
+  color: rgb(255, 100, 100);
+  margin: 0;
+}
+
+.baihoc-subtitle {
+  margin: 0.25rem 0 0.5rem;
+  opacity: 0.7;
+}
+
+.baihoc-content {
+  margin: 0;
+  white-space: pre-wrap;
+}
